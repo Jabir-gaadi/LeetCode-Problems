@@ -4,19 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        i = 0
         nums_len = len(nums)
-        j = nums_len - 1
-        while i < j:
-            if nums[j] == 0:
-                j -= 1
-                continue
+        j = 0
+        for i in range(nums_len):
             if nums[i] != 0:
-                i += 1
-                continue
-            tmp = i
-            while tmp < j:
-                nums[tmp], nums[tmp+1] = nums[tmp+1], nums[tmp]
-                tmp += 1
-            # i += 1
-        return nums
+                nums[i], nums[j] = nums[j], nums[i]
+                j += 1
