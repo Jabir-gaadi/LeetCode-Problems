@@ -1,12 +1,8 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        first_index = 0
-        for first in nums:
-            second_index = 0
-            for second in nums[1:]:
-                second_index += 1
-                if first_index == second_index:
-                    continue
-                if target == first + second:
-                    return [nums.index(first), second_index]
-            first_index += 1
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        my_dict = {}
+        for i, num in enumerate(nums):
+            left = target - num
+            if left in my_dict:
+                return [i, my_dict[left]]
+            my_dict[num] = i
