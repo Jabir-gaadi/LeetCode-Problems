@@ -8,6 +8,4 @@ class Solution:
             else:
                 maxi = max(count, maxi)
                 count = 0
-        if nums[-1] == 1 and count > maxi:
-            maxi = count
-        return maxi
+        return max(count, maxi)
