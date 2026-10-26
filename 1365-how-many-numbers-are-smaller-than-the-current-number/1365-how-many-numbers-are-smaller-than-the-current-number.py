@@ -5,5 +5,4 @@ class Solution:
         for i ,x in enumerate(sort_nums):
             if x not in save:
                 save[x] = i
-        # save = {x:i for x,i in enumerate(sort_nums) if x not in save}
         return [save[num] for num in nums]
